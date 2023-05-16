@@ -2,7 +2,7 @@ using RoleplayGame;
 
 namespace RoleplayGame
 {
-    public class Saruman : Enemy
+    public class Saruman : Enemies
     {
         private int vp;
 
