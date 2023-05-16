@@ -2,17 +2,15 @@ using RoleplayGame;
 
 namespace RoleplayGame
 {
-    public class Saruman : Enemies
+    public class Carlos : Enemies
     {
         private int vp;
 
-        public Saruman(string name) : base(name)
+        public Carlos(string name) : base(name)
         {
-            this.vp = 25;
+            this.vp = 10;
             this.AddItem(new Staff());
             this.AddItem(new Helmet());
         }
-
-
     }
 }
