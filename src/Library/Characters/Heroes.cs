@@ -3,27 +3,20 @@ using System.Collections.Generic;
 
 namespace RoleplayGame
 {
-    public abstract class Heroes : Character
+    public class Heroes : Character
     {
-        private int health = 100;
-
+        
         private int vp;
-
-        private List<IItem> items = new List<IItem>();
-
         public Heroes(string name) : base(name)
         {
             this.vp=0;
-            this.AddItem(new Bow());
-            this.AddItem(new Helmet());
         }
 
-        public void ReceiveAttack(Enemies whoAttack)
+        public void ReceiveAttack(int power)
         {
-            if (this.DefenseValue < whoAttack.AttackValue)
+            if (this.DefenseValue < power)
             {
-                this.Health -= whoAttack.AttackValue - this.DefenseValue;
-
+                this.Health -= power - this.DefenseValue;
             }
         }
         public int Vp
@@ -32,11 +25,10 @@ namespace RoleplayGame
             {
                 return this.vp;
             }
-            protected internal set
+            set
             {
                 this.vp = value;
             }
         }
-
     }
 }
