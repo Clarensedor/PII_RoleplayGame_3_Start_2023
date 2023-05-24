@@ -20,6 +20,10 @@ namespace Program
 
             // preguntar si se puede en add item poder agregar, muchos items
             // a la vez
+
+            Knight ElZorro = new Knight ("El Zorro");      
+            Bow bow = new Bow();
+            ElZorro.AddItem(bow);
             
             Knight arturo = new Knight("arturo");
             arturo.AddItem(escalibur);

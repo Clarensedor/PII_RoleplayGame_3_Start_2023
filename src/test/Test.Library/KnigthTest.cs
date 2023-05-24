@@ -13,7 +13,7 @@ namespace Test.Library
         [Test]
         public void valor_ataque_K()
         {
-            const int expected = 20;
+            const int expected = 0;
             Knight Quijote  = new Knight ("Quijote ");
             Assert.AreEqual(expected, Quijote.AttackValue);
         }
@@ -21,7 +21,7 @@ namespace Test.Library
         [Test]
         public void valor_defensa_K()
         {
-            const int expected = 39;
+            const int expected = 0;
             Knight Quijote  = new Knight ("Quijote ");
             Assert.AreEqual(expected, Quijote.DefenseValue);
         }
@@ -37,10 +37,12 @@ namespace Test.Library
         [Test]
         public void DefenseValue_Modified_By_AddingItem_K()      //Prueba que el metodo AddItem modifica el valor de defensa
         {
-            Knight Quijote  = new Knight ("Quijote ");      //Tiene 39 de defensa 
-            Helmet helmet = new Helmet(); //18
-            Quijote .AddItem(helmet);  
-            int expectedDefenseValue = 57; //Pues Knight ya viene con Armor y Shield que le da 39 de defenseValue
+            Knight Quijote  = new Knight ("Quijote ");      
+            Shield shield  = new Shield();
+            Helmet helmet = new Helmet(); 
+            Quijote .AddItem(helmet);
+            Quijote .AddItem(shield);  
+            int expectedDefenseValue = 32; 
             Assert.AreEqual(expectedDefenseValue, Quijote.DefenseValue);
         }
 
@@ -50,7 +52,7 @@ namespace Test.Library
             Knight ElZorro = new Knight ("El Zorro");      
             Bow bow = new Bow();
             ElZorro.AddItem(bow);
-            int expectedAttackValue = 35;
+            int expectedAttackValue = 15;
             Assert.AreEqual(expectedAttackValue, ElZorro.AttackValue);
         }
 
